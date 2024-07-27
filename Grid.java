@@ -1,24 +1,36 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
-public class Grid implements GridComponent {
+public class Grid {
     private int width;
     private int height;
-    private List<Obstacle> obstacles;
+    private Set<Position> obstacles;
 
     public Grid(int width, int height) {
         this.width = width;
         this.height = height;
-        this.obstacles = new ArrayList<>();
+        this.obstacles = new HashSet<>();
     }
 
-    public void addObstacle(Obstacle obstacle) {
-        obstacles.add(obstacle);
+    public void addObstacle(Position position) {
+        obstacles.add(position);
     }
 
-    @Override
+    public boolean isValidMove(Position position) {
+        return position.getX() >= 0 && position.getX() < width &&
+               position.getY() >= 0 && position.getY() < height &&
+               !obstacles.contains(position);
+    }
+
     public boolean isOccupied(Position position) {
-        // Check if position is within grid bounds and not occupied by an obstacle
-        return false; // Replace with actual implementation
+        return obstacles.contains(position);
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
     }
 }
