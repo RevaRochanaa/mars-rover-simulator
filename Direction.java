@@ -1,13 +1,23 @@
 public enum Direction {
-    NORTH, SOUTH, EAST, WEST;
+    NORTH, EAST, SOUTH, WEST;
 
     public Direction turnLeft() {
-        // Implement turning left logic
-        return null; // Replace with actual implementation
+        switch (this) {
+            case NORTH: return WEST;
+            case WEST: return SOUTH;
+            case SOUTH: return EAST;
+            case EAST: return NORTH;
+            default: throw new IllegalStateException("Invalid direction");
+        }
     }
 
     public Direction turnRight() {
-        // Implement turning right logic
-        return null; // Replace with actual implementation
+        switch (this) {
+            case NORTH: return EAST;
+            case EAST: return SOUTH;
+            case SOUTH: return WEST;
+            case WEST: return NORTH;
+            default: throw new IllegalStateException("Invalid direction");
+        }
     }
 }
