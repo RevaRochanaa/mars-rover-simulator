@@ -1,5 +1,4 @@
-# mars-rover-simulator
-Mars Rover that can navigate a grid-based terrain
+
 # Mars Rover Simulator
 
 This project simulates a Mars Rover navigating a grid-based terrain. The rover can move forward and rotate left or right based on commands given by the user.
