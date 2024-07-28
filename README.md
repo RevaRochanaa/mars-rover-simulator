@@ -26,3 +26,9 @@ git clone https://github.com/RevaRochanaa/mars-rover-simulator.git
 2. Navigate to the project directory:
 cd mars-rover-simulator
 
+3. Compile and run the code to test your changes:
+javac -d . src/main/java/com/example/marsrover/*.java
+java com.example.marsrover.MarsRoverSimulator
+
+
+
